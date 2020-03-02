@@ -1,4 +1,4 @@
-class Constant{
+class Constants{
     firstname = "Ricardo"
     lastname = "Milos"
     email = "pistolinthehand@pistrunum.lil"
@@ -7,4 +7,4 @@ class Constant{
     modelnumber = "e1923123dj1"
     wattHours = "9999999999999999999999999999999"
 }
-export default new Constant
+export default new Constants()
