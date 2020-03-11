@@ -1,9 +1,9 @@
-import { main, contactUsPage, constant, pageTail, label, faq } from "./page_objects/index"
+import { main, contactUsPage, constant, pageTail, label } from "./page_objects/index"
 
 context("WattDoesItUse test", ()=>{
     it("Open contact us page and fill in form", ()=>{
-        main.wdiuUrl()
-        cy.contains('Contact Us').click()
+        main.wdiuUrl();
+        cy.contains('Contact Us').click();
         contactUsPage.fillinFirstNameInput().should('have.value', constant.firstname);
         contactUsPage.fillinLastNameInput().should('have.value', constant.lastname);
         contactUsPage.clickAtInquiryType();
@@ -26,7 +26,7 @@ context("WattDoesItUse test", ()=>{
 
     it("Open FAQ", ()=>{
         pageTail.frequentlyAskedQuestions()
-        pageTail.frequentlyAskedQestionsLabelSelector.should("contain", label.frequentlyAskedQuestionsTitle)
+        pageTail.frequentlyAskedQestionsLabelSelector.should("contain", label.frequentlyAskedQuestionsTitle);
     } )
 
     it("Open Privacy Policy", ()=>{
