@@ -1,35 +1,31 @@
-import { main} from "./page_objects/index"
-
 context("Negative testing form Contact Us", ()=>{
     it("Fill in only First name", ()=>{
-        main.wdiuUrl();
-        cy.contains('Contact Us').click();
-        cy.FillInOnlyFirstNameCheckErrors();
+        cy.fillInOnlyFirstNameCheckErrors();
     })
 
     it("Fill in only First name", ()=>{
         cy.reload();
-        cy.FillInOnlyLastNameCheckErrors();
+        cy.fillInOnlyLastNameCheckErrors();
     })
 
     it("Select only inquiry type", ()=>{
         cy.reload();
-        cy.FillInOnlyInquiryFieldCheckErrors();
+        cy.fillInOnlyInquiryFieldCheckErrors();
     
     })
 
     it("Fill in only email field(correct form)", ()=>{
         cy.reload();
-        cy.FillInOnlyEmailCheckErrors();
+        cy.fillInOnlyEmailCheckErrors();
     })
 
     it("Fill in only email field(incorrect form)", ()=>{
         cy.reload();
-        cy.IncorrectEmailError();
+        cy.incorrectEmailError();
     })
 
     it('Fill in only comments ot questions', ()=>{
         cy.reload();
-        cy.FillInOnlyCommentsOrQuestions();
+        cy.fillInOnlyCommentsOrQuestions();
     })
 })

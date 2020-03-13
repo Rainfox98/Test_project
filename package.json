@@ -1,0 +1,23 @@
+{
+  "name": "cypress",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Rainfox98/Cypress.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Rainfox98/Cypress/issues"
+  },
+  "homepage": "https://github.com/Rainfox98/Cypress#readme",
+  "devDependencies": {
+    "eslint-plugin-cypress": "^2.10.3"
+  }
+}
