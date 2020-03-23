@@ -4,7 +4,11 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "cypress:open": "./node_modules/.bin/cypress open",
+    "cypress:run": "./node_modules/.bin/cypress run",
+    "cypress:lint": "eslint *.js",
+    "cypress:autoformat": "npm cypress:lint --fix --quiet"
+    
   },
   "repository": {
     "type": "git",
@@ -18,6 +22,22 @@
   },
   "homepage": "https://github.com/Rainfox98/Cypress#readme",
   "devDependencies": {
-    "eslint-plugin-cypress": "^2.10.3"
+    "@cypress/eslint-plugin-dev": "^5.0.0",
+    "@cypress/eslint-plugin-json": "^3.2.3",
+    "cypress": "4.2.0",
+    "cypress-axe": "0.5.3",
+    "cypress-expect-n-assertions": "1.0.0",
+    "cypress-failed-log": "2.6.2",
+    "cypress-file-upload": "3.5.3",
+    "cypress-iframe": "1.0.1",
+    "cypress-pipe": "1.7.0",
+    "cypress-plugin-snapshots": "1.3.0",
+    "cypress-react-unit-test": "2.4.3",
+    "cypress-select-tests": "1.5.3",
+    "cypress-wait-until": "1.6.1",
+    "eslint": "6.0.1",
+    "eslint-plugin-cypress": "^2.10.3",
+    "eslint-plugin-json-format": "2.0.1",
+    "eslint-plugin-mocha": "5.0.0"
   }
 }
