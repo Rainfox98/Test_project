@@ -1,5 +1,5 @@
 context('Admin side test', () => {
-  beforeEach(function () {
+  beforeEach(() => {
     // run these tests as if in a desktop
     // browser with a 720p monitor
     cy.viewport(1280, 720)

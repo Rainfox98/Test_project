@@ -1,17 +1,22 @@
 {
   "plugins": [
-    "@cypress/dev"
+    "@cypress/dev",
+    "cypress",
+    "babel"
   ],
   "extends": [
-    "plugin:@cypress/dev/general",
-    "plugin:@cypress/dev/tests"
+    "plugin:@cypress/dev/tests",
+    "airbnb-base",
+    "plugin:cypress/recommended"
   ],
   "env": {
     "node": true
   },
+  "parser": "babel-eslint",
   "globals": {
     "cy": true,
-    "Cypress": true
+    "Cypress": true,
+    "cypress/globals": true
   },
   "rules": {
     "strict": [1, "global"],
@@ -21,6 +26,10 @@
     "semi-spacing": 1,
     "no-unexpected-multiline": 1,
     "quotes": [1, "single", "avoid-escape"],
-    "indent": [2, 2, { "SwitchCase": 1 }]
+    "indent": [2, 2, { "SwitchCase": 1 }],
+    "cypress/no-assigning-return-values": "error",
+    "cypress/no-unnecessary-waiting": "error",
+    "cypress/assertion-before-screenshot": "warn",
+    "cypress/no-force": "warn"
   }
 }

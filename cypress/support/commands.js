@@ -1,4 +1,5 @@
-import { label, constant } from './index'
+import constant from './constants'
+import label from './labels'
 
 const SubmitButton = '#app > div > main > div > div.contact-row > div.contact-us > form > input'
 const WDIUURL = 'https://srv.mentalstack.com:3025/'
@@ -20,7 +21,7 @@ const privacyPolicyLabel = '#app > div > main > div > div.title'
 const termsOfUse = '#app > div > div.footer > div > div > div.footer-content-elements > div.footer-content-left > div.footer-menu > ul > li:nth-child(3) > a'
 const termsOfUseLabel = '#app > div > main > div > div.title'
 
-//WDIU client side commands
+// WDIU client side commands
 
 Cypress.Commands.add('fillInOnlyFirstNameCheckErrors', () => {
   cy.visit(WDIUURL)
@@ -86,7 +87,6 @@ Cypress.Commands.add('fillInContactUsForm', () => {
   cy.get(EmailSelector).type('Zero@numder.fal{enter}').should('have.value', 'Zero@numder.fal')
   cy.get('[name = text]').type('random text').should('have.value', 'random text')
   cy.get(SubmitButton).click()
-  cy.wait(8000)
   cy.get(labelContactUs).should('contain', label.labelAfterSendContactUsForm)
 })
 
@@ -109,7 +109,7 @@ Cypress.Commands.add('testPageTailLinks', () => {
   cy.get(termsOfUseLabel).should('contain', label.termOfUseLabel)
 })
 
-//WDIU admin side commands
+// WDIU admin side commands
 
 Cypress.Commands.add('wdiuLoginTest', () => {
   cy.visit(WDIUAdminURL);
@@ -118,14 +118,13 @@ Cypress.Commands.add('wdiuLoginTest', () => {
   cy.get('[name = button]').click()
 })
 
-//Klatch commands
+// Klatch commands
 
 Cypress.Commands.add('klatchLoginTest', () => {
   cy.visit(KlatchURL);
   cy.get('#root > main > div > div > div.authStyles_formWr__rs6Q- > form > div.controls_inputWr__16SRf.authStyles_emailInput__sH8kd > input').type('vsysoev@mentalstack.com').should('have.value', 'vsysoev@mentalstack.com');
   cy.get('#root > main > div > div > div.authStyles_formWr__rs6Q- > form > div.controls_inputWr__16SRf.authStyles_passwordInput__R3i_e > input').type('qwepoiurty').should('have.value', 'qwepoiurty');
   cy.get('#root > main > div > div > div.authStyles_formWr__rs6Q- > form > button').click();
-  cy.wait(5000)
   cy.get('#root > main > div > div.dashboard_gradientWr__1SNr4 > div > div.dashboard_welcome__2MEMu > p').should('contain', 'We’re here to help. Please let us know what you need. ');
 })
 
